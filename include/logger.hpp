@@ -12,7 +12,7 @@
 #define LOG_LEVEL_CLOSE    6
 
 // 全局日志开关，优先级高于Logger::Get().SetLevel(spdlog::GetLevel::err);
-#define LOGGER_LEVEL LOG_LEVEL_CLOSE
+#define LOGGER_LEVEL LOG_LEVEL_TRACE
 
 // got short filename(exlude file directory)
 #define __FILENAME__ (wlog::Logger::GetShortName(__FILE__))

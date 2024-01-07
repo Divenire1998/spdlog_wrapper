@@ -77,10 +77,11 @@ public:
 			// 线程安全sink
 			std::vector<spdlog::sink_ptr> sinks;
 			const auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(log_path, true);
+            file_sink->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%^%-8l%$] [%s:%#] [%!] %v");
 			sinks.push_back(file_sink);
 			const auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
 			// TODO use %^ and %$包裹起来的代码就是带颜色的
-			console_sink->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%^%-8l%$] [%s:%#] %v");
+			console_sink->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%^%-8l%$] [%s:%#] [%!] %v");
 			sinks.push_back(console_sink);
 			spdlog::set_default_logger(std::make_shared<spdlog::logger>("", sinks.begin(), sinks.end()));
 
