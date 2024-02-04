@@ -26,8 +26,8 @@ int main() {
 	LOG_INFO("LOG_INFO {}", 2);
 
 	spdlog::stopwatch sw;
-	spdlog::debug("Elapsed {}", sw);
-	LOG_DEBUG("Elapsed {:.3}", sw);
+	LOG_DEBUG("Elapsed {}", sw);
+	LOG_FATAL("Elapsed {:.3}", sw);
 
 	test_log();
 
